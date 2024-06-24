@@ -1,3 +1,4 @@
+import 'package:alert_dialog/widget/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _HomepageState extends State<Homepage> {
             actions: [
               TextButton(
                 onPressed: () {
-                  Navigator.of(context).pop()
+                  Navigator.of(context).pop();
                 },
                 child: const Text(
                   'Ok',
@@ -77,7 +78,11 @@ class _HomepageState extends State<Homepage> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(context: context, builder: (BuildContext context){
+                  return const CustomAlertDialog();
+                });
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 shape: RoundedRectangleBorder(
